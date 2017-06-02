@@ -61,13 +61,16 @@ MAIN BOX (SONG DISPLAY) STYLES
   background-color: #FEFAC0;
 
 
+
 }
 
 .dispSong {
 	margin: -10px 10px 10px 10px;
 	padding: 5px;
+
 }
 
 .dispSong h2 {
 	font-weight: lighter;
+		color: #785616;
 }
