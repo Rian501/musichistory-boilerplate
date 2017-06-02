@@ -1,0 +1,50 @@
+/* Red = #FFB4B0  
+Blue = #4DD7FA  
+Light yellow = #FEFAC0  
+Dark yellow = #785616
+/************************************
+STYLES IN COMMON
+************************************/
+#topbar,
+#blueLeft,
+#songDisplay {
+	border: 2px solid black;
+}
+
+#pagecontainer {
+	display: flex;
+	flex-direction: row;
+}
+
+
+/************************************
+TOP BAR STYLES
+************************************/
+#topbar {
+
+	background-color: #FFB4B0;
+	padding: 5px;
+	padding-left: 22px;
+	
+}
+
+
+
+/************************************
+LEFT BAR STYLES
+************************************/
+
+#blueLeft {
+
+	
+	}
+
+
+/************************************
+MAIN BOX (SONG DISPLAY) STYLES
+************************************/
+
+#songDisplay{
+
+	
+}
