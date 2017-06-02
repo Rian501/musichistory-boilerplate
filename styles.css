@@ -51,6 +51,7 @@ LEFT BAR STYLES
 	background-color: #4DD7FA;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	}
 
 /*.genreselect {
@@ -69,7 +70,10 @@ LEFT BAR STYLES
 	}
 
 .btn {
-	
+	width: 75%;
+	margin: 0 13.5%;
+
+
 }
 
 /************************************
