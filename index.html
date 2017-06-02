@@ -9,68 +9,70 @@
 
 
 <body>
-	
+	<div id="pagecontainer">
 		<div id="topbar">
 			<!--- Here I must put in a red bar with two links "View Music" "Add Music" and "Profile"these links need not go anywhere. -->
 			<p>View Music | <a href="#">Add Music</a> | <a href="#">Profile</a></p>
 		</div>
 	
-	<div id="pagecontainer">
-	
-		<div id="blueLeft">
-			<!--- Here I need a sliding bar for song length, a drop down select menu for artist, and a drop down select menu for album. Also a genre checkboxes option. The entire box is blue and takes up about 1/4 of the width of the screen with some nice gutters all between. There is a submit kind of button that says FILTER -->
-			<form class="artists">
-				<label for="artistdd">Artist:</label>
-				<select id="artistdd">
-				  <option value="sara">Sara Bareilles</option> 
-				  <option value="journey">Journey</option> 
-				  <option value="sting">Sting</option> 
-				  <option value="mjackson">Michael Jackson</option>
-				  <option value="gaga">Lady Gaga</option>
-				</select>
-			</form>
+		<div id="flexcontainer">
+		
+			<div id="blueLeft">
+				<!--- Here I need a sliding bar for song length, a drop down select menu for artist, and a drop down select menu for album. Also a genre checkboxes option. The entire box is blue and takes up about 1/4 of the width of the screen with some nice gutters all between. There is a submit kind of button that says FILTER -->
+				<form class="artists">
+					<label for="artistdd">Artist:</label>
+					<br><br>
+					<select id="artistdd">
+					  <option value="sara">Sara Bareilles</option> 
+					  <option value="journey">Journey</option> 
+					  <option value="sting">Sting</option> 
+					  <option value="mjackson">Michael Jackson</option>
+					  <option value="gaga">Lady Gaga</option>
+					</select>
+				</form>
+				<br><br><br>
+				<form class="albums">
+					<label for="albumdd">Album:</label>
+					<br><br>
+					<select id="albumdd">
+					  <option value="sarawaitress">What's Inside</option> 
+					  <option value="journeynew">Revelation</option> 
+					  <option value="stingbnd">Brand New Day</option> 
+					  <option value="mjacksonbad">Bad</option>
+					  <option value="gagafm">The Fame Monster</option>
+					</select>
+				</form>
 
-			<form class="albums">
-				<label for="albumdd">Album:</label>
-				<select id="albumdd">
-				  <option value="sarawaitress">What's Inside</option> 
-				  <option value="journeynew">Revelation</option> 
-				  <option value="stingbnd">Brand New Day</option> 
-				  <option value="mjacksonbad">Bad</option>
-				  <option value="gagafm">The Fame Monster</option>
-				</select>
-			</form>
+			</div>
 
-		</div>
+			<div id="songDisplay">
+				<!--- here, 4 songs by any artist on the list, each in their own container showing song name, artist, album, and genre-->
+				<section class="dispSong" id="song1">
+					<h2>Song Name 1</h2>
+					<p>Artist Name 1 | Album Name 1 | Genre 1</p>
+				</section>
 
-		<div id="songDisplay">
-			<!--- here, 4 songs by any artist on the list, each in their own container showing song name, artist, album, and genre-->
-			<section class="dispSong" id="song1">
-				<h2>Song Name 1</h2>
-				<p>Artist Name 1 | Album Name 1 | Genre 1</p>
-			</section>
+				<section class="dispSong" id="song2">
+					<h2>Song Name 2</h2>
+					<p>Artist Name 2 | Album Name 2 | Genre 2</p>
+				</section>
 
-			<section class="dispSong" id="song2">
-				<h2>Song Name 2</h2>
-				<p>Artist Name 2 | Album Name 2 | Genre 2</p>
-			</section>
+				<section class="dispSong" id="song3">
+					<h2>Song Name 3</h2>
+					<p>Artist Name 3 | Album Name 3 | Genre 3</p>
+				</section>
 
-			<section class="dispSong" id="song3">
-				<h2>Song Name 3</h2>
-				<p>Artist Name 3 | Album Name 3 | Genre 3</p>
-			</section>
-
-			<section class="dispSong" id="song4">
-				<h2>Song Name 4</h2>
-				<p>Artist Name 4 | Album Name 4 | Genre 4</p>
-			</section>
-
-
-		</div>
-
+				<section class="dispSong" id="song4">
+					<h2>Song Name 4</h2>
+					<p>Artist Name 4 | Album Name 4 | Genre 4</p>
+				</section>
 
 
+			</div>
 
+
+
+		</div>	
 	</div>
 </body>
 </html>
