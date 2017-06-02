@@ -1,0 +1,101 @@
+/* Red = #FFB4B0  
+Blue = #4DD7FA  
+Light yellow = #FEFAC0  
+Dark yellow = #785616
+/************************************
+STYLES IN COMMON
+************************************/
+.body {
+
+}
+
+#topbar,
+#blueLeft,
+#songDisplay {
+	border: 2px solid black;
+	margin: 8px;
+	padding: 2em;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#flexcontainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#pagecontainer {
+	width: 75%;
+	margin: auto;
+}
+
+/************************************
+TOP BAR STYLES
+************************************/
+#topbar {
+
+	background-color: #FFB4B0;
+	padding: 5px;
+	padding-left: 22px;
+	
+}
+
+
+
+/************************************
+LEFT BAR STYLES
+************************************/
+
+#blueLeft {
+	flex-grow: 1;
+	background-color: #4DD7FA;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	}
+
+/*.genreselect {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+*/
+.column{
+	display: inline;
+	
+}
+
+	.first{
+		float: left;
+		padding: 0 2em 0 0;
+	}
+
+.btn {
+	width: 75%;
+	margin: 0 13.5%;
+
+
+}
+
+/************************************
+MAIN BOX (SONG DISPLAY) STYLES
+************************************/
+
+#songDisplay{
+	flex-grow: 4;
+  background-color: #FEFAC0;
+
+
+
+}
+
+.dispSong {
+	margin: -10px 10px 10px 10px;
+	padding: 5px;
+
+}
+
+.dispSong h2 {
+	font-weight: lighter;
+		color: #785616;
+}

@@ -4,10 +4,119 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
+
 <body>
+	<div id="pagecontainer">
+		<div id="topbar">
+			<!--- Here I must put in a red bar with two links "View Music" "Add Music" and "Profile"these links need not go anywhere. -->
+			<p>View Music | <a href="#">Add Music</a> | <a href="#">Profile</a></p>
+		</div>
+	
+		<div id="flexcontainer">
+		
+			<div id="blueLeft">
+				<!--- Here I need a sliding bar for song length, a drop down select menu for artist, and a drop down select menu for album. Also a genre checkboxes option. The entire box is blue and takes up about 1/4 of the width of the screen with some nice gutters all between. There is a submit kind of button that says FILTER -->
+				<form class="songlength">
+				<label for="songlength">Song length:</label>
+				<br><br>
+				<input type="range" id="songlength">
+	
+				</form>
+				<br><br>
+
+				<form class="artists">
+					<label for="artistdd">Artist:</label>
+					<br><br>
+					<select id="artistdd">
+					  <option value="sara">Sara Bareilles</option> 
+					  <option value="journey">Journey</option> 
+					  <option value="sting">Sting</option> 
+					  <option value="mjackson">Michael Jackson</option>
+					  <option value="gaga">Lady Gaga</option>
+					</select>
+				</form>
+				<br><br>
+				<form class="albums">
+					<label for="albumdd">Album:</label>
+					<br><br>
+					<select id="albumdd">
+					  <option value="sarawaitress">What's Inside</option> 
+					  <option value="journeynew">Revelation</option> 
+					  <option value="stingbnd">Brand New Day</option> 
+					  <option value="mjacksonbad">Bad</option>
+					  <option value="gagafm">The Fame Monster</option>
+					</select>
+				</form>
+				<br><br><br>
+				<form class="genreselect">
+					  <legend>Genre:</legend>
+					  <br>
+					  <div class="first column">
+						  <div class="genrebox">
+						    <input type="checkbox" id="rock" name="genre" value="rock">
+						    <label for="rock">Rock</label>
+						  </div>
+						  <div class="genrebox">
+						    <input type="checkbox" id="pop" name="genre" value="pop">
+						    <label for="pop">Pop</label>
+						  </div>
+						  <div class="genrebox">
+						    <input type="checkbox" id="blues" name="genre" value="blues">
+						    <label for="blues">Blues</label>
+						  </div>
+						</div>
+						<div class="second column">
+						  <div class="genrebox">
+						    <input type="checkbox" id="classical" name="genre" value="classical">
+						    <label for="classical">Classical</label>
+						  </div>
+						  <div class="genrebox">
+						    <input type="checkbox" id="jazz" name="genre" value="jazz">
+						    <label for="jazz">Jazz</label>
+						  </div>
+						  <div class="genrebox">
+						    <input type="checkbox" id="Hiphop" name="genre" value="Hiphop">
+						    <label for="Hiphop">Hip hop</label>
+						  </div>
+						  </div>	
+
+					  
+				</form><br>
+				<button type="submit" class="btn">Filter</button>
+
+			</div>
+
+			<div id="songDisplay">
+				<!--- here, 4 songs by any artist on the list, each in their own container showing song name, artist, album, and genre-->
+				<section class="dispSong" id="song1">
+					<h2>"Don't Stop Believin'"</h2>
+					<p>Journey | Revelation | Rock</p>
+				</section>
+
+				<section class="dispSong" id="song2">
+					<h2>"She Used to Be Mine"</h2>
+					<p>Sara Bareilles | What's Inside | Pop</p>
+				</section>
+
+				<section class="dispSong" id="song3">
+					<h2>"The Way You Make Me Feel"</h2>
+					<p>Michael Jackson | Bad | Pop</p>
+				</section>
+
+				<section class="dispSong" id="song4">
+					<h2>"Fill Her Up"</h2>
+					<p>Sting | Brand New Day | Pop</p>
+				</section>
 
 
+			</div>
+
+
+
+		</div>	
+	</div>
 </body>
 </html>
