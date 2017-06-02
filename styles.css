@@ -49,8 +49,28 @@ LEFT BAR STYLES
 #blueLeft {
 	flex-grow: 1;
 	background-color: #4DD7FA;
+	display: flex;
+	flex-direction: column;
 	}
 
+/*.genreselect {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+*/
+.column{
+	display: inline;
+}
+
+	.first{
+		float: left;
+		padding: 0 2em 0 0;
+	}
+
+.btn {
+	
+}
 
 /************************************
 MAIN BOX (SONG DISPLAY) STYLES
