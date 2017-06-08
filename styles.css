@@ -25,7 +25,7 @@ STYLES IN COMMON
 }
 
 #pagecontainer {
-	width: 75%;
+	width: 80%;
 	margin: auto;
 }
 
@@ -67,11 +67,11 @@ LEFT BAR STYLES
 
 	.first{
 		float: left;
-		padding: 0 2em 0 0;
+		padding: 0 5px 0 0;
 	}
 
 .btn {
-	width: 75%;
+	width: 70%;
 	margin: 0 13.5%;
 
 
