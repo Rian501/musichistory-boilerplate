@@ -1,3 +1,30 @@
+JAVASCRIPT - VERSION 2
+
+
+Use JavaScript arrays, loops, and innerHTML to show the music you love.
+
+Use JavaScript to create a list of songs in the index.html file for your Music History project. Download the songs.js file, which contains an array of strings with song information.
+
+
+Add each string to the DOM in index.html in the main content area.
+Example output:
+
+{Song name} by {Artist} on the album {Album}
+
+{Song name} by {Artist} on the album {Album}
+
+
+
+
+
+
+
+
+
+
+
+
+FROM VERSION 1:
 # Music History
 
 This is the project that you will be working for your individual work throughout the entire front end course. Don't worry, you'll be building lots of other applications, but when you learn a new technique, library or language, you'll be cutting your teeth with it on Music History.
