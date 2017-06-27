@@ -45,7 +45,8 @@ displayAddViewLink.addEventListener("click", function() {
 	//toggle ishidden
 	console.log("I cliked it", );
 	let spaTypes = document.getElementsByClassName('pagecontainer')
-	spaTypes.forEach(function(pagecontainer) {
-		pagecontainer.classList.toggle('ishidden');
-	});
+	console.log("spatypes?", spaTypes);
+	for (let i=0; i<spaTypes.length; i++) {
+		spaTypes[i].classList.toggle('ishidden');
+	}
 });
