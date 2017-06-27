@@ -3,14 +3,12 @@ Blue = #4DD7FA
 Light yellow = #FEFAC0  
 Dark yellow = #785616
 /************************************
-STYLES IN COMMON
+STYLES MAIN
 ************************************/
-.body {
 
-}
 
-#topbar,
-#blueLeft,
+.topbar,
+.blueLeft,
 #songDisplay {
 	border: 2px solid black;
 	margin: 8px;
@@ -18,26 +16,46 @@ STYLES IN COMMON
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-#flexcontainer {
+.flexcontainer {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 }
 
-#pagecontainer {
+.pagecontainer {
 	width: 80%;
 	margin: auto;
 }
 
-/************************************
+.add-inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	margin: auto;
+	align-content: center;
+}
+
+.add-inputs button{
+	width: 30%;
+	margin: 5px auto;
+	align-items: baseline;
+}
+
+.add {
+	font-size: 1.5em;
+	margin: 5px auto;
+	padding: 1em;
+	width: 45%;
+	text-align: center;
+	flex-grow: 1
+}
+/***********************************
 TOP BAR STYLES
 ************************************/
-#topbar {
-
+.topbar {
 	background-color: #FFB4B0;
 	padding: 5px;
 	padding-left: 22px;
-	
 }
 
 
@@ -46,12 +64,13 @@ TOP BAR STYLES
 LEFT BAR STYLES
 ************************************/
 
-#blueLeft {
+.blueLeft {
 	flex-grow: 1;
 	background-color: #4DD7FA;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	max-width: 30%;
 	}
 
 /*.genreselect {
@@ -84,6 +103,7 @@ MAIN BOX (SONG DISPLAY) STYLES
 #songDisplay{
 	flex-grow: 4;
   background-color: #FEFAC0;
+  max-width: 60%;
 
 
 
@@ -98,4 +118,28 @@ MAIN BOX (SONG DISPLAY) STYLES
 .dispSong h2 {
 	font-weight: lighter;
 		color: #785616;
+}
+
+.fakelink {
+	color: blue;
+	text-decoration: underline
+}
+
+.ishidden {
+	display: none;
+}
+
+@media (max-width: 985px) {
+	.pagecontainer {
+	width: 98%;
+	margin: auto;
+	}
+
+	.blueLeft {
+		max-width: 100%;
+		}
+
+	#songDisplay{
+	  max-width: 100%;
+	}
 }
