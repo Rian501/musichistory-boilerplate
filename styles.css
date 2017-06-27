@@ -125,6 +125,11 @@ MAIN BOX (SONG DISPLAY) STYLES
 	text-decoration: underline
 }
 
+.fakelink:hover {
+	cursor: pointer;
+	
+}
+
 .ishidden {
 	display: none;
 }
