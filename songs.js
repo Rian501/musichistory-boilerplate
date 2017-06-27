@@ -15,14 +15,15 @@ function preLoad(callBack) {
 }
 
 preLoad(cleanUpSongs);
+//Add one song to the beginning and the end of the array.
+songs.unshift("The Way You Make Me Feel > by Michael Jackson on the album Bad")
+songs.push("24 Frames > by Jason Isbell and the 400 Unit on the album Something More Than Free")
 
 function addNewSong(nextStep, songArray, newSong) {
 	songArray.unshift(newSong);
 	nextStep(songArray);
 }
-//Add one song to the beginning and the end of the array.
-songs.unshift("The Way You Make Me Feel > by Michael Jackson on the album Bad")
-songs.push("24 Frames > by Jason Isbell and the 400 Unit on the album Something More Than Free")
+
 function cleanUpSongs(songsArray) {
 	for (i=0; i<songs.length; i++) {
 		songs[i]=songs[i].replace(/@/g,"")
@@ -34,10 +35,6 @@ function cleanUpSongs(songsArray) {
 	}
 	printSongsToDOM(songs);
 }
-
-
-
-
 
 function printSongsToDOM(songsArray) {
 	let songsContentDisplay = '';
@@ -53,14 +50,11 @@ function printSongsToDOM(songsArray) {
 	songDisplayDiv.innerHTML = songsContentDisplay;
 }
 
-
-
 let displayAddViewLink = document.getElementById('showAddviewLink');
 
 displayAddViewLink.addEventListener("click", function() {
 	toggleIsHidden();
 });
-
 
 function toggleIsHidden(){
 	console.log("I cliked it", );
@@ -76,7 +70,6 @@ let addMusicBtn = document.getElementById('addMusicBtn')
 
 addMusicBtn.addEventListener('click', function() {
 	addUserSongToArray();
-//Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
 	toggleIsHidden();
 })
 
