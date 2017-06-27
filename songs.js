@@ -1,52 +1,90 @@
 var songs = [];
+var preloaded = [
+	"Legs > by Z*ZTop on the album Eliminator",
+	"The Logical Song > by Supertr@amp on the album Breakfast in America",
+	"Another Brick in the Wall > by Pink Floyd on the album The Wall",
+	"Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction",
+	"Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill"
+]
 
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
+function preLoad(callBack) {
+	preloaded.forEach(function(song) {
+		songs[songs.length] = `${song}`;
+	})
+	callBack(songs);
+}
 
+preLoad(cleanUpSongs);
 
+function addNewSong(nextStep, songArray, newSong) {
+	songArray.unshift(newSong);
+	nextStep(songArray);
+}
 //Add one song to the beginning and the end of the array.
 songs.unshift("The Way You Make Me Feel > by Michael Jackson on the album Bad")
 songs.push("24 Frames > by Jason Isbell and the 400 Unit on the album Something More Than Free")
-
-for (i=0; i<songs.length; i++) {
-	songs[i]=songs[i].replace(/@/g,"")
-	songs[i]=songs[i].replace(/\*/g,"")
-	songs[i]=songs[i].replace(/\(/g,"")
-	songs[i]=songs[i].replace(/!/g,"")
-	songs[i]=songs[i].replace(/>/g,"-")
+function cleanUpSongs(songsArray) {
+	for (i=0; i<songs.length; i++) {
+		songs[i]=songs[i].replace(/@/g,"")
+		songs[i]=songs[i].replace(/\*/g,"")
+		songs[i]=songs[i].replace(/\(/g,"")
+		songs[i]=songs[i].replace(/!/g,"")
+		songs[i]=songs[i].replace(/>/g,"-")
+		
+	}
+	printSongsToDOM(songs);
 }
 
 
 
-let songDisplayDiv = document.getElementById('songDisplay')
-
-let songsContentDisplay = '';
 
 
-for (i=0; i < songs.length; i++) {
+function printSongsToDOM(songsArray) {
+	let songsContentDisplay = '';
+	let songDisplayDiv = document.getElementById('songDisplay')
+	for (i=0; i < songs.length; i++) {
 
-	songsContentDisplay += `
-		<section class="dispSong" id="${songs[i]}">
-		<h3>${songs[i]}</h3>
-		</section>
-		`
-	}
-	
+		songsContentDisplay += `
+			<section class="dispSong" id="${songs[i]}">
+			<h3>${songs[i]}</h3>
+			</section>
+			`
+		}
+	songDisplayDiv.innerHTML = songsContentDisplay;
+}
 
-songDisplayDiv.innerHTML = songsContentDisplay;
 
 
 let displayAddViewLink = document.getElementById('showAddviewLink');
 
 displayAddViewLink.addEventListener("click", function() {
-	//toggle ishidden
+	toggleIsHidden();
+});
+
+
+function toggleIsHidden(){
 	console.log("I cliked it", );
 	let spaTypes = document.getElementsByClassName('pagecontainer')
 	console.log("spatypes?", spaTypes);
 	for (let i=0; i<spaTypes.length; i++) {
 		spaTypes[i].classList.toggle('ishidden');
 	}
-});
+}
+
+
+let addMusicBtn = document.getElementById('addMusicBtn')
+
+addMusicBtn.addEventListener('click', function() {
+	addUserSongToArray();
+//Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
+	toggleIsHidden();
+})
+
+function addUserSongToArray() {
+	let getSongTitleUserInput = document.getElementById('song-input').value;
+	let getSongArtistUserInput = document.getElementById('artist-input').value;
+	let getSongAlbumUserInput = document.getElementById('album-input').value;
+	let songToAdd = `${getSongTitleUserInput} > by ${getSongArtistUserInput} on the album ${getSongAlbumUserInput}`
+	console.log("song to add?", songToAdd);
+	addNewSong(cleanUpSongs, songs, songToAdd);
+}
