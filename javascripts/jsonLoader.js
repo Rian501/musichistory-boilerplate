@@ -7,7 +7,7 @@ var SongDisplay = (function (globalScopeSongDisplay) {
 			importSongs.XHRLoad(cleanUpSongs, event);
 		});
 		songsRetrieve.addEventListener("error", importSongs.XHRFail);
-		songsRetrieve.open("GET", "songs.json");
+		songsRetrieve.open("GET", "../data/songs.json");
 		songsRetrieve.send();
 
 
