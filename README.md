@@ -6,6 +6,8 @@ Part One
 Read from local JSON file with an XHR.
 Loop over results and inject into Music History list view.
 Add delete button to each row and, when it is clicked, delete the entire row in the DOM.
+
+
 Part Two
 
 Take your music and split it into two JSON files instead of them all living on one file.

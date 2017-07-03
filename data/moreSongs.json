@@ -1,2 +1,30 @@
-songs.unshift("The Way You Make Me Feel > by Michael Jackson on the album Bad")
-songs.push("24 Frames > by Jason Isbell and the 400 Unit on the album Something More Than Free")
+{
+	"more_songs": [
+		{
+			"title":"The Way You Make Me Feel",
+			"artist": "Michael Jackson",
+			"album": "Bad"
+		},
+		{
+			"title":"24 Frames",
+			"artist": "Jason Isbell and the 400 Unit",
+			"album": "Something More Than Free"
+		},
+		{
+			"title":"Don't Stop Believin'",
+			"artist": "Journey",
+			"album": "Revelation"
+		},
+		{
+			"title":"She Used to Be Mine",
+			"artist": "Sara Bareilles",
+			"album": "What's Inside"
+		},
+		{
+			"title":"Fill Her Up",
+			"artist": "Sting",
+			"album": "Brand New Day"
+		}
+	]
+}
+

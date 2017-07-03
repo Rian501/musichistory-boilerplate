@@ -37,6 +37,7 @@ var SongDisplay = (function (globalScopeSD) {
 		songDisplayDiv.innerHTML = songsContentDisplay;
 	}
 
+//delete song
 	window.addEventListener("click", function() {
 		if (event.target.classList.contains('delete')) {
 			event.target.parentNode.parentNode.remove();
@@ -48,8 +49,12 @@ var SongDisplay = (function (globalScopeSD) {
 		nextStep(songArray);
 	}
 
-	function deleteSong (event) {
+addMoreBtn = document.getElementById('moreSongs');
+addMoreBtn.addEventListener("click", moreSongsBtn);
 
+	function moreSongsBtn() {
+		console.log("I clicked More Songs", );
+		SongDisplay.ImportSongs.addMoreSongs();
 	}
 
 	globalScopeSD.DOMint = DOMint;

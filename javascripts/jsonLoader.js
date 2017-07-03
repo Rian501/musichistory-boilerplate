@@ -10,7 +10,6 @@ var SongDisplay = (function (globalScopeSongDisplay) {
 		songsRetrieve.open("GET", "../data/songs.json");
 		songsRetrieve.send();
 
-
 	}
 
 	importSongs.XHRFail = function() {
@@ -23,8 +22,22 @@ var SongDisplay = (function (globalScopeSongDisplay) {
 		cleanUpCB(songData)
 	}
 
+	importSongs.XHRLoadMore = function(cleanUpCB, event) {
+		var moreSongData = JSON.parse(event.target.responseText).more_songs;
+		console.log("success again", moreSongData);
+		cleanUpCB(moreSongData);
+	}
 
-
+	importSongs.addMoreSongs = function() {
+		let moreSongsRetrieve = new XMLHttpRequest();
+		moreSongsRetrieve.open("GET", "../data/moreSongs.json");
+		moreSongsRetrieve.send();
+		moreSongsRetrieve.addEventListener("error", importSongs.XHRFail);
+		moreSongsRetrieve.addEventListener("load", function() {
+			console.log("moresongsLoaded", moreSongsRetrieve);
+			SongDisplay.ImportSongs.XHRLoadMore(cleanUpSongs, event);
+		})
+	}
 
   globalScopeSongDisplay.ImportSongs = importSongs;
   return globalScopeSongDisplay;
