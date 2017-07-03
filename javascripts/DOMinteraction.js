@@ -6,23 +6,32 @@ var SongDisplay = (function (globalScopeSD) {
 	let addMusicBtn = document.getElementById('addMusicBtn')
 
 	addMusicBtn.addEventListener('click', function() {
-		addUserSongToArray();
+		DOMint.addUserSongToArray();
 		toggleIsHidden();
 	})
 
 	DOMint.addUserSongToArray = function() {
+		let userAddedSongs = [];
 		let getSongTitleUserInput = document.getElementById('song-input').value;
 		let getSongArtistUserInput = document.getElementById('artist-input').value;
 		let getSongAlbumUserInput = document.getElementById('album-input').value;
-		let songToAdd = `${getSongTitleUserInput} > by ${getSongArtistUserInput} on the album ${getSongAlbumUserInput}`
+		let songToAdd = {};
+			songToAdd.title = getSongTitleUserInput;
+			songToAdd.artist = getSongArtistUserInput;
+			songToAdd.album = getSongAlbumUserInput;
+	
 		console.log("song to add?", songToAdd);
-		addNewSong(cleanUpSongs, songs, songToAdd);
-	}
+		addNewSong(cleanUpSongs, songsArray, songToAdd);
+		userAddedSongs.push(songToAdd);
+		console.log("user added songs array?", userAddedSongs);
+	};
 
-
+	let songsContentDisplay = '';
+	let songDisplayDiv = document.getElementById('songDisplay')
+	let userAddedSongs = [];
 	DOMint.printSongsToDOM = function(songsArray) {
-		let songsContentDisplay = '';
-		let songDisplayDiv = document.getElementById('songDisplay')
+		console.log("songs Array?", songsArray);
+		songsArray = songsArray.concat(userAddedSongs);
 		for (i=0; i < songsArray.length; i++) {
 
 			songsContentDisplay += `
@@ -31,14 +40,17 @@ var SongDisplay = (function (globalScopeSD) {
 				</section>
 				`
 			}
-			
+
 		songDisplayDiv.innerHTML = songsContentDisplay;
+		//return songsArray
 	}
 
 
 
 	function addNewSong(nextStep, songArray, newSong) {
+		console.log("song array?", songArray);
 		songArray.unshift(newSong);
+		console.log("song array?", songArray);
 		nextStep(songArray);
 	}
 

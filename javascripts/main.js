@@ -6,8 +6,11 @@
 //and a main to be master of puppets
 
 
-
+let songsArray = [];
 SongDisplay.ImportSongs.retrieveSongs();
+
+//SongDisplay.DOMint.printSongsToDOM(cleanArray);
+
 
 
 // function preLoad(callBack) {

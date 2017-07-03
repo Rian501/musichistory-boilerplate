@@ -21,7 +21,6 @@ var SongDisplay = (function (globalScopeSongDisplay) {
 		var songData = JSON.parse(event.target.responseText).preloaded_songs;
 		console.log("success", songData);
 		cleanUpCB(songData)
-
 	}
 
 

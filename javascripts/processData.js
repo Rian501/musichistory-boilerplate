@@ -24,6 +24,9 @@ function cleanUpSongs(songsArray) {
 		songsArray[i].artist=songsArray[i].artist.replace(/!/g,"")
 		songsArray[i].artist=songsArray[i].artist.replace(/>/g,"-")
 	}
-	console.log("song data clean?", songsArray);
+	console.log("songsaray in processdata?", songsArray);
+	songsArray = songsArray;
 	SongDisplay.DOMint.printSongsToDOM(songsArray);
+
+	return songsArray
 }
