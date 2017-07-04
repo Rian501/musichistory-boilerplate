@@ -1,14 +1,13 @@
 var SongDisplay = (function (globalScopeSongDisplay) {
 	let importSongs = Object.create(null);
 
-	importSongs.retrieveSongs = function() {
-		let songsRetrieve = new XMLHttpRequest();
-		songsRetrieve.addEventListener("load", function() {
-			importSongs.XHRLoad(cleanUpSongs, event);
+	importSongs.retrieveSongs = function(callbackCleanup) {
+		$.ajax({
+			url:"../data/songs.json"
+		})
+		.done(function(data) {
+			callbackCleanup(data.preloaded_songs)
 		});
-		songsRetrieve.addEventListener("error", importSongs.XHRFail);
-		songsRetrieve.open("GET", "../data/songs.json");
-		songsRetrieve.send();
 
 	}
 

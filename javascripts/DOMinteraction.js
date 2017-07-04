@@ -1,3 +1,6 @@
+//Implement jQuery in your Music History code. Every innerHTML, getElementById, getElementByClassName, event listener and XHR request. Convert 'em all.
+
+
 var SongDisplay = (function (globalScopeSD) {
 	let DOMint = Object.create(null);
 	let songsContentDisplay = '';

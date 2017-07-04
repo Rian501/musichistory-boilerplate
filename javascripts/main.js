@@ -1,5 +1,5 @@
 let songsArray = [];
-SongDisplay.ImportSongs.retrieveSongs();
+SongDisplay.ImportSongs.retrieveSongs(cleanUpSongs);
 
 let displayAddViewLink = document.getElementById('showAddviewLink');
 
