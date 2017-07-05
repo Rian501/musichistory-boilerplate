@@ -38,15 +38,18 @@ var SongDisplay = (function (globalScopeSD) {
 				`
 			}
 		songDisplayDiv.innerHTML = songsContentDisplay;
+	};
+	
+	DOMint.addDeleteBtnFunctionality= function() {
+		$deleteBtn = $("button.delete");
+		console.log("delete btton?", $deleteBtn);
+		$deleteBtn.click(function() {
+			console.log("delete button clicked", event.currentTarget);
+			event.target.closest(".dispSong").remove();
+		});
 	}
-
-//delete song
-	window.addEventListener("click", function() {
-		if (event.target.classList.contains('delete')) {
-			event.target.parentNode.parentNode.remove();
-		};
-	})
-
+			
+	
 	function addNewSong(nextStep, songArray, newSong) {
 		songArray.unshift(newSong);
 		nextStep(songArray);
@@ -57,7 +60,7 @@ addMoreBtn.addEventListener("click", moreSongsBtn);
 
 	function moreSongsBtn() {
 		console.log("I clicked More Songs", );
-		SongDisplay.ImportSongs.addMoreSongs();
+		SongDisplay.ImportSongs.addMoreSongs(cleanUpSongs);
 	}
 
 	globalScopeSD.DOMint = DOMint;

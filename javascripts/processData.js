@@ -21,7 +21,7 @@ function cleanUpSongs(songsArray) {
 	}
 	console.log("songsaray in processdata?", songsArray);
 	songsArray = songsArray;
-	SongDisplay.DOMint.printSongsToDOM(songsArray);
+	$(SongDisplay.DOMint.printSongsToDOM(songsArray)).ready( SongDisplay.DOMint.addDeleteBtnFunctionality());
 
 	return songsArray
 }
