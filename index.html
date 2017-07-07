@@ -6,8 +6,6 @@
   <title>Music History</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
-
 <body>
 	<div class="addview pagecontainer ishidden">
 		<div class="topbar">
@@ -87,46 +85,46 @@
 						    <input type="checkbox" id="jazz" name="genre" value="jazz">
 						    <label for="jazz">Jazz</label>
 						  </div>
-						  <div class="genrebox">
-						    <input type="checkbox" id="Hiphop" name="genre" value="Hiphop">
-						    <label for="Hiphop">Hip hop</label>
-						  </div>
-						  </div>	
+							  <div class="genrebox">
+							    <input type="checkbox" id="Hiphop" name="genre" value="Hiphop">
+							    <label for="Hiphop">Hip hop</label>
+							  </div>
+					  </div>	
 
 					  
 				</form><br>
 				<button type="submit" class="btn">Filter</button>
 
 			</div>
+			<div>
+				<div class="songDisplay" id="songDisplay">				
+					<!-- <section class="dispSong" id="song1">
+						<h2>"Don't Stop Believin'"</h2>
+						<p>Journey | Revelation | Rock</p>
+					</section>
 
-			<div class="songDisplay" id="songDisplay">				
-				<section class="dispSong" id="song1">
-					<h2>"Don't Stop Believin'"</h2>
-					<p>Journey | Revelation | Rock</p>
-				</section>
+					<section class="dispSong" id="song2">
+						<h2>"She Used to Be Mine"</h2>
+						<p>Sara Bareilles | What's Inside | Pop</p>
+					</section>
 
-				<section class="dispSong" id="song2">
-					<h2>"She Used to Be Mine"</h2>
-					<p>Sara Bareilles | What's Inside | Pop</p>
-				</section>
+					<section class="dispSong" id="song3">
+						<h2>"The Way You Make Me Feel"</h2>
+						<p>Michael Jackson | Bad | Pop</p>
+					</section>
 
-				<section class="dispSong" id="song3">
-					<h2>"The Way You Make Me Feel"</h2>
-					<p>Michael Jackson | Bad | Pop</p>
-				</section>
-
-				<section class="dispSong" id="song4">
-					<h2>"Fill Her Up"</h2>
-					<p>Sting | Brand New Day | Pop</p>
-				</section>
-
-
+					<section class="dispSong" id="song4">
+						<h2>"Fill Her Up"</h2>
+						<p>Sting | Brand New Day | Pop</p>
+					</section> -->
+				</div>
+				<button id="moreSongs">More ></button>
 			</div>
-
-
-
 		</div>	
 	</div>
-	<script type="text/javascript" src="songs.js"></script>
+	<script type="text/javascript" src="javascripts/jsonLoader.js"></script>
+	<script type="text/javascript" src="javascripts/processData.js"></script>
+	<script type="text/javascript" src="javascripts/DOMinteraction.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 </html>
