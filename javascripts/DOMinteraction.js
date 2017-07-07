@@ -1,6 +1,3 @@
-//Implement jQuery in your Music History code. Every innerHTML, getElementById, getElementByClassName, event listener and XHR request. Convert 'em all.
-
-
 var SongDisplay = (function (globalScopeSD) {
 	let DOMint = Object.create(null);
 	let songsContentDisplay = '';
@@ -15,13 +12,13 @@ var SongDisplay = (function (globalScopeSD) {
 
 	DOMint.addUserSongToArray = function() {
 		let $songToAdd = {};
-			$songToAdd.title = $('#song-input').value;
-			$songToAdd.artist = $('#artist-input').value;
-			$songToAdd.album = $('#album-input').value;
+			$songToAdd.title = $('#song-input').val();
+			$songToAdd.artist = $('#artist-input').val();
+			$songToAdd.album = $('#album-input').val();
 	
-		console.log("song to add?", songToAdd);
-		addNewSong(cleanUpSongs, songsArray, songToAdd);
-		userAddedSongs.push(songToAdd);
+		console.log("song to add?", $songToAdd);
+		addNewSong(cleanUpSongs, songsArray, $songToAdd);
+		userAddedSongs.push($songToAdd);
 		console.log("user added songs array?", userAddedSongs);
 	};
 
