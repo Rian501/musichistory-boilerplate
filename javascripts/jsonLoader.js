@@ -18,17 +18,17 @@ var SongDisplay = (function (globalScopeSongDisplay) {
 		alert('An error occurred while transferring data!')
 	}
 
-	importSongs.XHRLoad = function(cleanUpCB, event) {
-		var songData = JSON.parse(event.target.responseText).preloaded_songs;
-		console.log("success", songData);
-		cleanUpCB(songData)
-	}
+	// importSongs.XHRLoad = function(cleanUpCB, event) {
+	// 	var songData = JSON.parse(event.target.responseText).preloaded_songs;
+	// 	console.log("success", songData);
+	// 	cleanUpCB(songData)
+	// }
 
-	importSongs.XHRLoadMore = function() {
-		var moreSongData = JSON.parse(event.target.responseText).more_songs;
-		console.log("success again", moreSongData);
-		cleanUpCB(moreSongData);
-	}
+	// importSongs.XHRLoadMore = function() {
+	// 	var moreSongData = JSON.parse(event.target.responseText).more_songs;
+	// 	console.log("success again", moreSongData);
+	// 	cleanUpCB(moreSongData);
+	// }
 
 	importSongs.addMoreSongs = function(cleanUpCB) {
 		$.ajax({
