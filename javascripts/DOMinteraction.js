@@ -1,60 +1,59 @@
 var SongDisplay = (function (globalScopeSD) {
 	let DOMint = Object.create(null);
 	let songsContentDisplay = '';
-	let songDisplayDiv = document.getElementById('songDisplay')
+	let $songDisplayDiv = $('#songDisplay')
 	let userAddedSongs = [];
-	let addMusicBtn = document.getElementById('addMusicBtn')
+	let $addMusicBtn = $('#addMusicBtn')
 
-	addMusicBtn.addEventListener('click', function() {
+	$addMusicBtn.click( function() {
 		DOMint.addUserSongToArray();
 		toggleIsHidden();
-	})
+	});
 
 	DOMint.addUserSongToArray = function() {
-		let songToAdd = {};
-			songToAdd.title = document.getElementById('song-input').value;
-			songToAdd.artist = document.getElementById('artist-input').value;
-			songToAdd.album = document.getElementById('album-input').value;
+		let $songToAdd = {};
+			$songToAdd.title = $('#song-input').val();
+			$songToAdd.artist = $('#artist-input').val();
+			$songToAdd.album = $('#album-input').val();
 	
-		console.log("song to add?", songToAdd);
-		addNewSong(cleanUpSongs, songsArray, songToAdd);
-		userAddedSongs.push(songToAdd);
+		console.log("song to add?", $songToAdd);
+		addNewSong(cleanUpSongs, songsArray, $songToAdd);
+		userAddedSongs.push($songToAdd);
 		console.log("user added songs array?", userAddedSongs);
 	};
 
 	DOMint.printSongsToDOM = function(songsArray) {
 		console.log("songs Array?", songsArray);
 		songsArray = songsArray.concat(userAddedSongs);
-		for (i=0; i < songsArray.length; i++) {
-
+		songsArray.forEach (function (element) {
 			songsContentDisplay += `
-				<section class="dispSong" id="${songsArray[i]}">
-					<h3>${songsArray[i].title}</h3><h4>by ${songsArray[i].artist} on the album ${songsArray[i].album}
+				<section class="dispSong" id="${element}">
+					<h3>${element.title}</h3><h4>by ${element.artist} on the album ${element.album}
 					<button class="delete">delete song</button>
 				</section>
 				`
-			}
-		songDisplayDiv.innerHTML = songsContentDisplay;
+			})
+			$songDisplayDiv.html(songsContentDisplay)
+	};
+	
+	DOMint.addDeleteBtnFunctionality= function() {
+		$deleteBtn = $("button.delete");
+		$deleteBtn.click(function() {
+			event.target.closest(".dispSong").remove();
+		});
 	}
-
-//delete song
-	window.addEventListener("click", function() {
-		if (event.target.classList.contains('delete')) {
-			event.target.parentNode.parentNode.remove();
-		};
-	})
-
+			
+	
 	function addNewSong(nextStep, songArray, newSong) {
 		songArray.unshift(newSong);
 		nextStep(songArray);
 	}
 
-addMoreBtn = document.getElementById('moreSongs');
-addMoreBtn.addEventListener("click", moreSongsBtn);
+	$addMoreBtn = $('#moreSongs');
+	$addMoreBtn.click(moreSongsBtn);
 
 	function moreSongsBtn() {
-		console.log("I clicked More Songs", );
-		SongDisplay.ImportSongs.addMoreSongs();
+		SongDisplay.ImportSongs.addMoreSongs(cleanUpSongs);
 	}
 
 	globalScopeSD.DOMint = DOMint;
